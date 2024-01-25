@@ -3,30 +3,33 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
-import AddIcon from '@mui/icons-material/Add';
 import Avatar from '@mui/material/Avatar';
 
 class Country extends Component {
     state = { 
-        name: 'United States',
-        medals: 0,
+        name: this.props.country.name,
+        gold: this.props.country.gold,
     }
 
-    handleClick = () => {
-      this.setState({ medals: this.state.medals + 1});
-      console.log(this.state.medals);
+    handleIncrement = () => {
+      this.setState({ gold: this.state.gold + 1});
+    }
+    handleDecrement = () => {
+        if (this.state.gold > 0) {
+        this.setState({ gold: this.state.gold - 1});
+        }
     }
     render() {
         return ( 
-        <Container maxWidth='sm'>
-            <Paper elevation={4} className='jss1' style={{width: '260px'}}>
-            <div className='country' style={{textAlign: 'center'}}>
-            <div className='name' style={{ fontSize: '2em', fontWeight: '700', marginBottom: '10px'}}>{ this.state.name }</div>
+        <Container maxWidth= 'sm' style={{paddingBottom: '25px', textTransform: 'capitalize'}}>
+            <Paper elevation={4} className='jss1' style={{width: '300px'}}>
+            <div className='Country'>
+                <div className='name' style={{fontSize: '1.5em'}}> { this.state.name} </div>
                 <Divider style={{marginBottom: '10px'}}/>
-            <div className='medals' style={{fontSize: '1.5em', textTransform: 'capitalize', display: 'flex', alignItems: 'center', marginTop: '5px'}}>
-                <Avatar style={{backgroundColor: '#F4CBBA'}}>{ this.state.medals }</Avatar> <span style={{width: '130px', paddingLeft: '10px'}}>gold medals</span>
-                <Button variant="contained" onClick={this.handleClick} style={{backgroundColor: '#C8A18F'}}> <AddIcon></AddIcon> </Button>
-            </div>
+                <div className='medals' style={{ display: 'flex', alignItems: 'center'}}><Avatar style={{backgroundColor: '#D1E8EE', color: '#8897AA'}}>{ this.state.gold} </Avatar><span style={{paddingLeft: '10px', fontSize: '1.2em'}}>gold medals</span>
+                    <Button variant='contained' style={{backgroundColor: '#8897AA'}} onClick={ () => this.handleIncrement(this.props.country.id)}> + </Button>
+                    <Button variant='contained' style={{backgroundColor: '#8897AA'}} onClick={ () => this.handleDecrement(this.props.country.id)}> - </Button>
+                </div>
             </div>
             </Paper>
         </Container>

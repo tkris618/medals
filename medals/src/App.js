@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import Country from './components/Country';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends Component{
+  state = {
+    countries: [
+      { id: 1, name: 'United States', gold: 2 },
+      { id: 2, name: 'China', gold: 3 },
+      { id: 3, name: 'Germany', gold: 0 ,}
+    ]
+  }
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+        </header>
+        { this.state.countries.map(country => <Country 
+        key={ country.id }
+        country={ country }
+
+        />) }
+      </div>
+    );
+  }
+  }
+  
 
 export default App;
