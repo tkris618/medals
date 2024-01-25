@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import Country from './components/Country';
+import Container from '@mui/material/Container';
 
 class App extends Component{
   state = {
@@ -12,15 +13,13 @@ class App extends Component{
   }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-        </header>
-        { this.state.countries.map(country => <Country 
+      <Container fixed style={{textTransform: 'capitalize'}}>
+      { this.state.countries.map(country => <Country 
         key={ country.id }
         country={ country }
 
         />) }
-      </div>
+      </Container>
     );
   }
   }

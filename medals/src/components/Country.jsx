@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Avatar from '@mui/material/Avatar';
+import Grid from '@mui/material/Grid';
 
 class Country extends Component {
     state = { 
@@ -21,7 +21,8 @@ class Country extends Component {
     }
     render() {
         return ( 
-        <Container maxWidth= 'sm' style={{paddingBottom: '25px', textTransform: 'capitalize'}}>
+            <Grid container spacing={{xs: 2}} justifyContent={'center'}>
+                <Grid item>
             <Paper elevation={4} className='jss1' style={{width: '300px'}}>
             <div className='Country'>
                 <div className='name' style={{fontSize: '1.5em'}}> { this.state.name} </div>
@@ -32,7 +33,8 @@ class Country extends Component {
                 </div>
             </div>
             </Paper>
-        </Container>
+            </Grid>
+            </Grid>
         );
     }
 }
