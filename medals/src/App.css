@@ -10,3 +10,38 @@
 font-size: 8em;
 }
 
+.jss1{
+  padding: 15px;
+}
+.jss3{
+  padding-top: 70px;
+}
+.jss12{
+  width: 100%;
+  font-size: 2em;
+  margin: 0;
+  opacity: .95;
+  position: fixed;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 8px;
+  background-color: #C8C7D7;
+}
+.jss7{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+
+  
+}
+.jss9{
+  width: 130px;
+  margin-left: 2.5px;
+  text-transform: capitalize;
+  font-size: 1.2em;
+}
+.jss10{
+  background-color: #8897AA !important;
+  margin: 2px !important;
+  
+}

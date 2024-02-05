@@ -16,6 +16,8 @@ font-size: 8em;
   font-size: 4em;
   opacity: .75;
   cursor: pointer;
+  position: absolute;
+
 }
 
 .counter {
