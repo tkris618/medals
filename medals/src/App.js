@@ -11,7 +11,7 @@ import './App.css';
 
 const App = () => {
   const [ countries, setCountries ] = useState([]);
-  const apiEndPoint = "https://medals-api-6.azurewebsites.net/api/country";
+  const apiEndPoint = "https://olympicmedalsapi.azurewebsites.net/api/country";
   const medals = useRef([
     { id: 1, name: 'gold' },
     { id: 2, name: 'silver' },
