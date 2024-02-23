@@ -1,47 +1,16 @@
-.App {
-  text-align: center;
-  height: 100%
+.medal-count {
+  user-select:none;
 }
-#root {
-  height: 100%;
+.btn:focus {
+  outline: none;
+  box-shadow: none;
 }
-
-.App-header {
-font-size: 8em;
+.icon-btn {
+  cursor: pointer;
 }
-
-.jss1{
-  padding: 15px;
+.icon-btn:hover {
+  opacity: .5;
 }
-.jss3{
-  padding-top: 70px;
-}
-.jss12{
-  width: 100%;
-  font-size: 2em;
-  margin: 0;
-  opacity: .95;
-  position: fixed;
-  text-align: center;
-  padding-top: 25px;
-  padding-bottom: 8px;
-  background-color: #C8C7D7;
-}
-.jss7{
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-
-  
-}
-.jss9{
-  width: 130px;
-  margin-left: 2.5px;
-  text-transform: capitalize;
-  font-size: 1.2em;
-}
-.jss10{
-  background-color: #8897AA !important;
-  margin: 2px !important;
-  
+.card {
+  width: 22rem;
 }
