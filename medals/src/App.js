@@ -59,12 +59,15 @@ const App = () => {
   }
   
   useEffect(() => {
-    async function fetchData() {
-      const { data: fetchedCountries } = await axios.get(apiEndPoint);
-      setCountries(fetchedCountries);
+    if(countries && countries.length == 0) {
+      async function fetchData() {
+        const { data: fetchedCountries } = await axios.get(apiEndPoint);
+        setCountries(fetchedCountries);
+      }
+      fetchData();
     }
-    fetchData();
-  })
+
+  }, [countries])
 
   return (
     <React.Fragment>
