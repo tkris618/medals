@@ -8,13 +8,9 @@ const Medal = (props) => {
   const { medal, country, onIncrement, onDecrement } = props;
   return (
     <React.Fragment>
-      <div style={{ textTransform: "capitalize"}}>
-      { 
-          ( country[medal.name].page_value !== country[medal.name].saved_value) ?
-            <span className="delta">{medal.name} Medals: </span>
-          :
-            <span>{medal.name} Medals</span>
-        }      </div>
+       <div style={{ textTransform: "capitalize"}}>
+        { medal.name } Medals
+      </div>
       <div className="medal-count">
         <DashSquare 
           onClick={ () => country[medal.name].page_value > 0 && onDecrement(country.id, medal.name) } 
