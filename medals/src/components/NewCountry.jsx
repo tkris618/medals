@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import Nav from 'react-bootstrap/Nav';
 import Modal from 'react-bootstrap/Modal';
 import { PlusCircleFill } from 'react-bootstrap-icons';
 import Form from 'react-bootstrap/Form';
@@ -26,9 +27,9 @@ const NewCountry = (props) => {
 
   return (
     <React.Fragment>
-      <Button variant="outline-success" onClick={ handleModalShow }>
+        <Nav.Link className="btn" href="#" onClick={ handleModalShow }>
         <PlusCircleFill />
-      </Button>
+      </Nav.Link>
       <Modal onKeyPress={ handleModalKeyPress } show={ showModal } onHide={ handleModalClose }>
         <Modal.Header closeButton>
           <Modal.Title>New Country</Modal.Title>

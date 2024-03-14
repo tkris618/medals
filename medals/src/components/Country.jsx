@@ -6,7 +6,7 @@ import Badge from 'react-bootstrap/Badge';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 const Country = (props) => {
-  const { country, medals, onIncrement, onDecrement, onDelete, onSave, onReset } = props;
+  const { country, medals, onIncrement, onDecrement, onDelete, onSave, onReset, canDelete, canPatch } = props;
   const getMedalsTotal = (country, medals) => {
     let sum = 0;
     medals.forEach(medal => { sum += country[medal.name].page_value; });
@@ -40,14 +40,14 @@ const Country = (props) => {
               <ArrowCounterclockwise onClick={ () => onReset(country.id) } style={{ color: 'blue'}}/>
             </React.Fragment>
             :
-            <TrashFill onClick={() => onDelete(country.id)} className='icon-btn' style={{ color:'red' }} />
-          }        </Card.Title>
+            canDelete && <TrashFill onClick={() => onDelete(country.id)} className='icon-btn' style={{ color:'red' }} />          }        </Card.Title>
         <ListGroup variant="flush">
         { medals.map(medal =>
         <ListGroup.Item className="d-flex justify-content-between" key={ medal.id }>
           <Medal  
             country={ country } 
             medal={ medal } 
+            canPatch={ canPatch }
             onIncrement={ onIncrement } 
             onDecrement={ onDecrement } />
         </ListGroup.Item>
